@@ -39,3 +39,9 @@ export function deleteNav(id, data) {
     data
   })
 }
+
+export function uploadAvatar() {
+  return request({
+    url: '/v1/spec/upload_avatar'
+  })
+}

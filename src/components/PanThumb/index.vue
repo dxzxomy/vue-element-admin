@@ -6,13 +6,19 @@
       </div>
     </div>
     <!-- eslint-disable-next-line -->
-    <div :style="{backgroundImage: `url(${image})`}" class="pan-thumb"></div>
+    <div :style="{backgroundImage: `url(${image})`}" class="pan-thumb">
+    </div>
   </div>
 </template>
 
 <script>
+import 'babel-polyfill'; // es6 shim
+import myUpload from 'vue-image-crop-upload';
 export default {
   name: 'PanThumb',
+  components: {
+    myUpload
+  },
   props: {
     image: {
       type: String,
@@ -24,11 +30,11 @@ export default {
     },
     width: {
       type: String,
-      default: '150px'
+      default: '80px'
     },
     height: {
       type: String,
-      default: '150px'
+      default: '80px'
     }
   }
 }
